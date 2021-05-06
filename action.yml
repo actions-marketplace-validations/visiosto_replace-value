@@ -1,0 +1,25 @@
+name: 'Replace Value'
+description: 'Replace a value in a file for the current run'
+author: 'Visiosto oy'
+inputs:
+  file:
+    description: 'The file where the content to replace is.'
+    required: true
+  replaced:
+    description: 'The value that will be replaced.'
+    required: true
+  value:
+    description: 'The value that the original value is replaced with.'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - run: ${{ github.action_path }}/replace.sh
+      shell: bash
+      env:
+        FILE_TO_PROCESS: ${{ inputs.file }}
+        VALUE_TO_REPLACE: ${{ inputs.replaced }}
+        VALUE_TO_SET: ${{ inputs.value }}
+branding:
+  icon: 'edit-3'
+  color: 'orange'
