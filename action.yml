@@ -1,0 +1,5 @@
+name: 'Replace Value'
+description: 'Replace a value in a file for the current run'
+author: 'Visiosto oy'
+runs:
+  using: 'composite'
