@@ -14,7 +14,7 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: ${{ github.action_path }}/replace.sh
+    - run: if [ "${{ runner.os }}" == "Windows" ]; then ${{ github.action_path }}\\replace.sh; else ${{ github.action_path }}/replace.sh; fi
       shell: bash
       env:
         FILE_TO_PROCESS: ${{ inputs.file }}
