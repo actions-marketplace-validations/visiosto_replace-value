@@ -20,3 +20,6 @@ runs:
         FILE_TO_PROCESS: ${{ inputs.file }}
         VALUE_TO_REPLACE: ${{ inputs.replaced }}
         VALUE_TO_SET: ${{ inputs.value }}
+branding:
+  icon: 'edit-3'
+  color: 'orange'
