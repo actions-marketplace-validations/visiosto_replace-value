@@ -14,12 +14,12 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: if [ "${{ runner.os }}" == "Windows" ]; then ${{ github.action_path }}\replace.sh; else ${{ github.action_path }}/replace.sh; fi
+    - run: |
+        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
+        echo "The file is now:"
+        cat ${{ inputs.file }}
+        echo ""
       shell: bash
-      env:
-        FILE_TO_PROCESS: ${{ inputs.file }}
-        VALUE_TO_REPLACE: ${{ inputs.replaced }}
-        VALUE_TO_SET: ${{ inputs.value }}
 branding:
   icon: 'edit-3'
   color: 'orange'
