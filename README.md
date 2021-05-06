@@ -7,7 +7,7 @@ This action replaces a value in a single file for the current job run in GitHub 
 You can use the latest version of this action by adding the following step to your workflow.
 
 ```yml
-uses: visiosto/replace-value@v0.1.0
+uses: visiosto/replace-value@v0.2.0
 ```
 
 See the [documentation for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsuses) for more information on how to use actions in your workflows.
