@@ -16,3 +16,7 @@ runs:
   steps:
     - run: ${{ github.action_path }}/replace.sh
       shell: bash
+      env:
+        FILE_TO_PROCESS: ${{ inputs.file }}
+        VALUE_TO_REPLACE: ${{ inputs.replaced }}
+        VALUE_TO_SET: ${{ inputs.value }}
