@@ -6,9 +6,9 @@
 set -e
 
 echo "The inputs are:"
-echo "file: $INPUT_FILE"
-echo "replaced: $INPUT_REPLACED"
-echo "value: $INPUT_VALUE"
+echo "file: ${INPUT_FILE}"
+echo "replaced: ${INPUT_REPLACED}"
+echo "value: ${INPUT_VALUE}"
 
 sed -i -- "s/${INPUT_REPLACED}/${INPUT_VALUE}/g" "${GITHUB_WORKSPACE}/${INPUT_FILE}"
 echo "The file is now:\n"
