@@ -1,5 +1,15 @@
 name: 'Replace Value'
 description: 'Replace a value in a file for the current run'
 author: 'Visiosto oy'
+inputs:
+  file:
+    description: 'The file where the content to replace is.'
+    required: true
+  replaced:
+    description: 'The value that will be replaced.'
+    required: true
+  value:
+    description: 'The value that the original value is replaced with.'
+    required: true
 runs:
   using: 'composite'
