@@ -4,13 +4,7 @@ This action replaces a value in a single file for the current job run in GitHub 
 
 ## Usage
 
-You can use the latest version of this action by adding the following step to your workflow.
-
-```yml
-uses: visiosto/replace-value@v0.2.2
-```
-
-See the [documentation for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsuses) for more information on how to use actions in your workflows.
+See [action.yml](https://github.com/visiosto/replace-value/blob/main/action.yml).
 
 ## Contributing
 
@@ -35,4 +29,3 @@ This project adheres to the Contributor Covenant [Code of Conduct](https://githu
 ## Licence
 
 The website’s source code is licensed under the [MIT License](LICENCE).
-
