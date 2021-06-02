@@ -15,6 +15,10 @@ runs:
   using: 'composite'
   steps:
     - run: |
+        echo "The inputs are:"
+        echo "file: ${{ inputs.file }}"
+        echo "replaced: ${{ inputs.replaced }}"
+        echo "value: ${{ inputs.value }}"
         sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
         echo "The file is now:"
         cat ${{ inputs.file }}
