@@ -19,7 +19,7 @@ runs:
         echo "file: ${{ inputs.file }}"
         echo "replaced: ${{ inputs.replaced }}"
         echo "value: ${{ inputs.value }}"
-        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
+        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${{ inputs.file }}"
         echo "The file is now:"
         cat ${{ inputs.file }}
         echo ""
