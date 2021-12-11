@@ -4,11 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com), and this project adheres to [Semantic Versioning](https://semver.org).
 
+## [Unreleased]
+
+### Fixed
+
+- `CHANGELOG` for `v1.2.1`.
+
 ## [1.2.1] - 2021-12-11
 
-### Changed
+### Fixed
 
-- Permissions for `replace.sh`
+- Permissions for `replace.sh`.
 
 ## [1.2.0] - 2021-12-11
 
