@@ -11,6 +11,10 @@ inputs:
   value:
     description: 'The value that the original value is replaced with.'
     required: true
+  external-script:
+    description: 'Whether or not to use the external script for replacing the value. Included to support some projects.'
+    required: false
+    default: false
 runs:
   using: 'composite'
   steps:
@@ -19,7 +23,8 @@ runs:
         echo "file: ${{ inputs.file }}"
         echo "replaced: ${{ inputs.replaced }}"
         echo "value: ${{ inputs.value }}"
-        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${{ inputs.file }}"
+        echo "external script: ${{ inputs.external-script }}"
+        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
         echo "The file is now:"
         cat ${{ inputs.file }}
         echo ""
