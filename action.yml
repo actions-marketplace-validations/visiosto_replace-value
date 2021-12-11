@@ -24,11 +24,19 @@ runs:
         echo "replaced: ${{ inputs.replaced }}"
         echo "value: ${{ inputs.value }}"
         echo "external script: ${{ inputs.external-script }}"
-        sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
-        echo "The file is now:"
-        cat ${{ inputs.file }}
-        echo ""
+        if [ "${{ inputs.external-script }}" = "true" ]; then
+          ${{ github.action_path }}/replace.sh
+        else
+          sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
+          echo "The file is now:"
+          cat ${{ inputs.file }}
+          echo ""
+        fi
       shell: bash
+      env:
+        FILE_TO_PROCESS: ${{ inputs.file }}
+        VALUE_TO_REPLACE: ${{ inputs.replaced }}
+        VALUE_TO_SET: ${{ inputs.value }}
 branding:
   icon: 'edit-3'
   color: 'orange'
