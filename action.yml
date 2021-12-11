@@ -25,6 +25,7 @@ runs:
         echo "value: ${{ inputs.value }}"
         echo "external script: ${{ inputs.external-script }}"
         if [ "${{ inputs.external-script }}" = "true" ]; then
+          chmod +x ${{ github.action_path }}/replace.sh
           ${{ github.action_path }}/replace.sh
         else
           sed -i -- "s/${{ inputs.replaced }}/${{ inputs.value }}/g" "${GITHUB_WORKSPACE}/${{ inputs.file }}"
