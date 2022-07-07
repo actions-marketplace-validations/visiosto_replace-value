@@ -28,4 +28,4 @@ This project adheres to the Contributor Covenant [Code of Conduct](https://githu
 
 ## Licence
 
-The website’s source code is licensed under the [MIT License](LICENCE).
+The website’s source code is licensed under the [Apache License, Version 2.0](LICENSE).

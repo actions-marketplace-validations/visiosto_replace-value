@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com), and this 
 
 ## [Unreleased]
 
+### Changed
+
+- Project’s licence to the Apache License, Version 2.0.
+
 ### Fixed
 
 - `CHANGELOG` for `v1.2.1`.
